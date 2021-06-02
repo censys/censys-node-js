@@ -20,13 +20,15 @@
   "license": "Apache-2.0",
   "repository": "github:censys/censys-node-js.git",
   "bugs": "https://github.com/censys/censys-node-js/issues",
-  "main": "src/index.js",
   "files": [
-    "src"
+    "lib"
   ],
+  "main": "./lib/src/index.js",
+  "types": "./lib/src/index.d.ts",
   "scripts": {
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "tsc"
   },
   "engines": {
     "node": ">=12.0.0"
@@ -38,8 +40,11 @@
     "moment": "^2.29.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
+    "@babel/core": "^7.8.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^15.3.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
     "babel-jest": "^27.0.2",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
@@ -47,6 +52,8 @@
     "eslint-plugin-node": "^11.1.0",
     "jest": "^27.0.3",
     "nock": "^13.0.11",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "ts-jest": "^27.0.2",
+    "typescript": "^4.2.4"
   }
 }

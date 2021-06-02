@@ -5,4 +5,6 @@ const c = new SearchClient({
   apiSecret: process.env.API_SECRET,
 });
 
-c.v2.hosts.aggregate("service.service_name: HTTP", "services.port", 5).then(console.log);
+c.v2.hosts
+  .aggregate("service.service_name: HTTP", "services.port", 5)
+  .then(console.log);

@@ -1,4 +1,5 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
     commonjs: true,
@@ -8,18 +9,17 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:jest/recommended",
     "prettier",
-    "plugin:node/recommended",
   ],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: 2020,
   },
   rules: {
     semi: ["error", "always"],
     quotes: ["error", "double"],
-    "node/global-require": "error",
-    "node/exports-style": ["error", "module.exports"],
     "jest/expect-expect": [
       "error",
       {
@@ -27,6 +27,6 @@ module.exports = {
       },
     ],
   },
-  plugins: ["jest"],
-  ignorePatterns: ["examples/"],
+  plugins: ["jest", "@typescript-eslint"],
+  ignorePatterns: ["examples/", "lib/"],
 };
